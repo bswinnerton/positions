@@ -24,8 +24,8 @@ class Position
 
   def potential_sale
     Trade.new(
-      order_type: 'Limit',
-      transaction_type: 'Sell',
+      order_type: :market,
+      transaction_type: :sell,
       currency: purchase.currency,
       price: purchase.exchange_currency.trading_price,
       quantity: purchase.quantity,

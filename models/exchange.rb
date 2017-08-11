@@ -8,6 +8,10 @@ class Exchange
     @taker_fee = taker_fee
   end
 
+  def trades
+    client.trades
+  end
+
   def client
     @client ||= Object.const_get("Clients::#{name.capitalize}").new
   end
