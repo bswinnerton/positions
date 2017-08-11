@@ -30,6 +30,14 @@ class Trade
     order_type == :limit
   end
 
+  def purchase?
+    transaction_type == :buy
+  end
+
+  def sale?
+    transaction_type == :sell
+  end
+
   def fee
     return @fee if @fee
 
