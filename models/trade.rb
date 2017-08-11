@@ -22,10 +22,18 @@ class Trade
     validate_transaction_type!
   end
 
+  def market_order?
+    order_type == :market
+  end
+
+  def limit_order?
+    order_type == :limit
+  end
+
   def fee
     return @fee if @fee
 
-    if order_type == :market || order_type == :stop
+    if market_order?
       exchange.taker_fee
     else
       exchange.maker_fee
