@@ -11,8 +11,9 @@ EXCHANGES = {
 }
 
 CURRENCIES = {
-  bitcoin: Currency.new(name: 'Bitcoin', ticker: 'BTC'),
-  ethereum: Currency.new(name: 'Ethereum', ticker: 'ETH'),
+  btc: Currency.new(name: 'Bitcoin', ticker: 'BTC'),
+  eth: Currency.new(name: 'Ethereum', ticker: 'ETH'),
+  ltc: Currency.new(name: 'Litecoin', ticker: 'LTC'),
 }
 
 Trade.all.each do |trade|
