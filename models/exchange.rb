@@ -9,7 +9,7 @@ class Exchange
   end
 
   def trades
-    client.trades
+    client.trades.sort_by(&:date).reverse
   end
 
   def client

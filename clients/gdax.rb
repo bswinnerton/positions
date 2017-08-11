@@ -12,7 +12,7 @@ module Clients
         currency = fill.fetch('product_id').split('-').first.downcase.to_sym
 
         Trade.new(
-          date: fill.fetch('created_at'),
+          date: DateTime.parse(fill.fetch('created_at')),
           order_type: order_type,
           transaction_type: fill.fetch('side').downcase.to_sym,
           currency: currency,
