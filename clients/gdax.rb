@@ -9,7 +9,7 @@ module Clients
     def trades
       client.fills.map do |fill|
         order_type = fill.fetch('liquidity') == 'T' ? :market : :limit
-        currency = fill.fetch('product_id').split('-').first.downcase.to_sym
+        currency = CURRENCIES[fill.fetch('product_id').split('-').first.downcase.to_sym]
 
         Trade.new(
           date: DateTime.parse(fill.fetch('created_at')),

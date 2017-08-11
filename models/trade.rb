@@ -33,11 +33,7 @@ class Trade
   end
 
   def quantity
-    if transaction_type == :sell
-      -@quantity
-    else
-      @quantity
-    end
+    @quantity
   end
 
   def gross_total_cost

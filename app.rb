@@ -15,4 +15,7 @@ CURRENCIES = {
   ethereum: Currency.new(name: 'Ethereum', ticker: 'ETH'),
 }
 
-require 'pry'; binding.pry
+Trade.all.each do |trade|
+  verb = trade.purchase? ? "Purchased" : "Sold"
+  puts "#{verb} #{trade.quantity} #{trade.currency.name} @ #{trade.price} for $#{trade.total_cost}"
+end
