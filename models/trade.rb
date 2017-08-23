@@ -5,7 +5,7 @@ class Trade
   attr_accessor :date, :order_type, :transaction_type, :price, :currency, :exchange
 
   def self.all
-    EXCHANGES.values.flat_map(&:trades)
+    EXCHANGES.values.flat_map(&:trades).reverse
   end
 
   def initialize(date:nil,order_type:,transaction_type:,price:,quantity:,currency:,exchange:,fee:)
