@@ -22,6 +22,10 @@ class Trade
     validate_transaction_type!
   end
 
+  def date
+    @date.to_time
+  end
+
   def market_order?
     order_type == :market
   end

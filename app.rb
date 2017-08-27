@@ -22,7 +22,7 @@ output = Terminal.new
 Trade.all.each do |trade|
   row = output.row
 
-  row << trade.date.strftime('%B %-d, %Y %l:%m %p')
+  row << trade.date.strftime('%B %-d, %Y %l:%M %p')
 
   if trade.purchase?
     row.add_element("BUY", color: :green)
